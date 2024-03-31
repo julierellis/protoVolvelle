@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grouping SVG elements</title>
+</head>
+
+<body>
+	<p>Hello world!  How does SVG grouping work in the DOM?</p>
+	<p>It looks like it's just an element called "g", to which you attach the elements you want grouped.
+	I think you can probably manipulate them together by setting attributes on the g-element.</p>
+	<p><i>Well ... some of the attributes are inherited from the group.  Doesn't seem that position is.</i></p>
+
+<svg  id = "SVGspace" 
+  width = "800" 
+  height = "800"
+  xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="20"> This is test text, not in a group. </text>
+	
+	<circle id="circle100" cx="200" cy="150" r="100" fill="transparent" stroke="red"></circle>
+	<circle id="circle125" cx="200" cy="150" r="125" fill="transparent" stroke="pink"></circle>
+	<text x="200" y="150"> Two circles, not yet grouped. </text>
+
+	<g>
+		<circle id="circle100" cx="200" cy="300" r="100" fill="transparent" stroke="green"></circle>
+		<circle id="circle125" cx="200" cy="300" r="125" fill="transparent" stroke="lavender"></circle>
+		<text x="200" y="300"> Two circles, grouped. </text>
+	</g>
+</svg>
+
+	
+
+<script>
+
+	const smallCircle 	= document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	const largeCircle 	= document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	const groupText 	= document.createElementNS("http://www.w3.org/2000/svg", "text");
+	const group 		= document.createElementNS("http://www.w3.org/2000/svg", "g");
+	
+	
+//	smallCircle.setAttribute('cx', `200`);
+	smallCircle.setAttribute('cy', `450`);
+	smallCircle.setAttribute('r',  `100`);
+//	smallCircle.setAttribute('stroke',  `blue`);
+//	smallCircle.setAttribute('fill',  `transparent`);
+			
+//	largeCircle.setAttribute('cx', `200`);
+	largeCircle.setAttribute('cy', `450`);
+	largeCircle.setAttribute('r',  `150`);
+//	largeCircle.setAttribute('stroke',  `lightblue`);
+//	largeCircle.setAttribute('fill',  `transparent`);	
+	
+	groupText.setAttribute('x', `200`);
+	groupText.setAttribute('y', `450`);
+	groupText.setAttribute('id', `theText`);
+	groupText.textContent = 'grouped yet? YES! in the .js';
+	
+	group.setAttribute('id', `theGroup`);
+	group.setAttribute('cx', `200`);
+	group.setAttribute('stroke',  `blue`);
+	group.setAttribute('fill',  `transparent`);
+				
+	document.querySelector("#SVGspace").appendChild(group);
+	document.querySelector("#theGroup").appendChild(smallCircle);
+	document.querySelector("#theGroup").appendChild(largeCircle)
+	document.querySelector("#theGroup").appendChild(groupText);
+
+
+</script>
+
+

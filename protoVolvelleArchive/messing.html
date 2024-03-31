@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MessingAround</title>
+</head>
+
+<body>
+  <p>Hello world!  This is confusing the heck out of me.</p>
+ 
+<svg  id = "SVGspace" 
+  width = "400" 
+  height = "400"
+  xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="200"> This is test text, put directly in the SVG block. </text>
+</svg>
+
+<script>
+
+	const myText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+	
+	myText.setAttribute('x', `100`);
+	myText.setAttribute('y', `100`);
+//	myText.setAttribute('id', `theText`);
+	myText.textContent = 'text added from the script';
+	
+//	myTextPath.setAttribute('id', `theTextPath`);
+//	myTextPath.setAttribute('href',`#thePath`);
+	
+//	document.querySelector("#SVGSpace").appendChild(myPath);
+//	document.querySelector("#SVGspace").appendChild(myText).appendChild(myTextPath);
+	document.querySelector("#SVGspace").appendChild(myText);
+/* [
+Copyright © 2020 Xah Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+URL: SVG Circle Arc http://xahlee.info/js/svg_circle_arc.html
+Version 2019-06-19
+
+] */
+</script>
+
+

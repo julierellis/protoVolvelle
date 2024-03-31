@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MessingAround</title>
+</head>
+
+<body>
+  <p>Hello world!  This is confusing the heck out of me.</p>
+ 
+<svg  id = "SVGspace" 
+  width = "400" 
+  height = "400"
+  xmlns="http://www.w3.org/2000/svg">
+  <text x="100" y="100">(100,100)</text>
+</svg>
+
+<script>
+
+	const myText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+	const myPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+	
+//	myText.setAttribute('x', `100`);
+//	myText.setAttribute('y', `10`);
+//	myText.setAttribute('id', `theText`);
+	
+	myPath.setAttribute('d', "M10,90 Q90,90 90,45 Q90,10 50,10 Q10,10 10,40 Q10,70 45,70 Q70,70 75,50" );
+	myPath.setAttribute('stroke', "red");
+	myPath.setAttribute('fill', "none");
+	myPath.setAttribute('id', "thePath");
+	
+	const myTextPath = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
+	myTextPath.setAttribute('href', "#thePath");
+	myTextPath.textContent = 'the curly thing is thePath';
+	
+	document.querySelector("#SVGspace").appendChild(myText).appendChild(myTextPath);
+	document.querySelector("#SVGspace").appendChild(myPath);
+
+</script>
+
+

@@ -1,0 +1,26 @@
+
+function circle2Path(cx, cy, r){
+		return 	['M', cx, cy, 
+				'm', -r, '0' ,
+				'a', r, r , '0' , '1', '1' ,  (r*2),'0',
+				'a', r, r , '0' , '1', '1' ,  -(r*2),'0'].join(' ');
+}
+function circle2WholePath(cx, cy, r){
+		return 	['M', cx, cy, 
+				'm', -(r/2), -r/2 ,
+				'A', r, r , '0' , '0', '1' ,  cx+r,cy,
+				'A', r, r , '0' , '1', '1' ,  cx-r,cy].join(' ');
+}
+	
+<!--
+<use href="#disk0" y="540" />
+<use href="#disk1" y="830" />
+<use href="#disk2" y="1180"/>
+<use href="#disk3" y="1590"/>
+<use href="#disk4" y="2060"/>
+<use href="#disk5" y="2590"/>
+<use href="#disk6" y="3180"/>
+<use href="#disk7" y="3830"/>
+<use href="#disk8" y="4540"/>
+<use href="#disk9" y="5310"/>
+--!>
